@@ -1,4 +1,4 @@
-name: "Pull Request Docs Check"
+name: "Push Docs Check"
 on:
   - push
 
@@ -6,13 +6,8 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
-    #   - name: Crear directorio tmp
-    #     run: mkdir -p /tmp
-
-    #   - name: Crear archivo log
-    #     run: touch /tmp/sphinx-log
-
       - uses: actions/checkout@v4
       - uses: ammaraskar/sphinx-action@master
         with:
-          docs-folder: "docs/"
+          docs-folder: "RefugioDigital/docs/"
+          build-command: make html
