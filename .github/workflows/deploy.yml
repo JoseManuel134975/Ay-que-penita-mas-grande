@@ -1,6 +1,7 @@
 name: "Push Docs Check"
 on:
-  - push
+  push:
+    branches: [main]
 
 jobs:
   docs:
@@ -11,3 +12,9 @@ jobs:
         with:
           docs-folder: "RefugioDigital/docs/"
           build-command: make html
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: RefugioDigital/docs/build/html
