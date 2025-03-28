@@ -6,11 +6,11 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
-      - name: Crear directorio tmp
-        run: mkdir -p /tmp
+    #   - name: Crear directorio tmp
+    #     run: mkdir -p /tmp
 
-      - name: Crear archivo log
-        run: touch /tmp/sphinx-log
+    #   - name: Crear archivo log
+    #     run: touch /tmp/sphinx-log
 
       - uses: actions/checkout@v4
       - uses: ammaraskar/sphinx-action@master
