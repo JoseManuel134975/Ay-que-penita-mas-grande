@@ -13,6 +13,10 @@ jobs:
           docs-folder: "RefugioDigital/docs/"
           build-command: make html
 
+      - name: List built files
+        run: ls -R RefugioDigital/docs/build/html
+        
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
