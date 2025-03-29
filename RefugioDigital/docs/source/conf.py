@@ -39,14 +39,3 @@ exclude_patterns = []
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
-
-# Configuración adicional para autodoc
-autodoc_default_options = {
-    'members': True,       # Incluir todos los miembros (funciones, métodos)
-    'undoc-members': True, # Incluir miembros sin docstrings
-    'show-inheritance': True, # Mostrar la jerarquía de herencia
-}
-
-# Para dar soporte a estilo de docstrings Google o NumPy
-napoleon_google_docstring = True  # Para Google-style docstrings
-napoleon_numpy_docstring = True   # Para NumPy-style docstrings
