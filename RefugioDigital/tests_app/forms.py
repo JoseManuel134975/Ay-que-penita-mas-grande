@@ -2,6 +2,13 @@ from .models import Test, Pregunta, Respuesta
 from django import forms
 
 class TestForm(forms.ModelForm):
+    """
+    Formulario para la creación y edición de un Test.
+    
+    Campos:
+        - nombre: Nombre del test.
+        - descripcion: Descripción opcional del test.
+    """
     class Meta:
         model = Test
 
@@ -17,6 +24,12 @@ class TestForm(forms.ModelForm):
 
 
 class PreguntaForm(forms.ModelForm):
+    """
+    Formulario para la creación y edición de una Pregunta dentro de un Test.
+    
+    Campos:
+        - texto: Contenido de la pregunta.
+    """
     class Meta:
         model = Pregunta
 

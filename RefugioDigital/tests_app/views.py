@@ -7,12 +7,18 @@ from django.contrib import messages
 
 # Create your views here.
 def index(request):
+    """
+    Vista para listar todos los tests disponibles.
+    """
     tests = Test.objects.all()
 
     return render(request, 'index_tests.html', { 'tests': tests })
 
 
 def crear_test(request):
+    """
+    Vista para la creación de un nuevo test.
+    """
     test = Test()
     form = TestForm()
 
@@ -29,6 +35,9 @@ def crear_test(request):
 
 
 def ver_preguntas(request, pk):
+    """
+    Vista para mostrar todas las preguntas de un test específico.
+    """
     test = get_object_or_404(Test, pk=pk)
     preguntas = test.preguntas.all()
 
@@ -36,6 +45,9 @@ def ver_preguntas(request, pk):
 
 
 def agregar_pregunta(request, pk):
+    """
+    Vista para agregar una nueva pregunta a un test específico.
+    """
     test = get_object_or_404(Test, pk=pk)
     form = PreguntaForm()
     
@@ -52,6 +64,9 @@ def agregar_pregunta(request, pk):
 
 
 def eliminar_test(request, pk):
+    """
+    Vista para eliminar un test existente.
+    """
     test = get_object_or_404(Test, pk=pk)
     test.delete()
     messages.warning(request, 'El test ha sido eliminado correctamente.')
@@ -60,6 +75,9 @@ def eliminar_test(request, pk):
 
 
 def editar_pregunta(request, pkPregunta, pkTest):
+    """
+    Vista para editar una pregunta específica dentro de un test.
+    """
     test = get_object_or_404(Test, pk=pkTest)
     pregunta = get_object_or_404(Pregunta, pk=pkPregunta)
     form = PreguntaForm()
@@ -75,6 +93,9 @@ def editar_pregunta(request, pkPregunta, pkTest):
     
 
 def eliminar_pregunta(request, pkPregunta, pkTest):
+    """
+    Vista para eliminar una pregunta específica dentro de un test.
+    """
     pregunta = get_object_or_404(Pregunta, pk=pkPregunta)
     pregunta.delete()
     messages.warning(request, 'La pregunta ha sido eliminada correctamente.')
