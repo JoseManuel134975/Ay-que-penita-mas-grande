@@ -8,11 +8,11 @@
 
 import os
 import sys
-# import django
+import django
 
 sys.path.insert(0, os.path.abspath('..'))
-# os.environ['DJANGO_SETTINGS_MODULE'] = 'RefugioDigital.settings'
-# django.setup()
+os.environ['DJANGO_SETTINGS_MODULE'] = 'RefugioDigital.settings'
+django.setup()
 
 project = 'RefugioDigital'
 copyright = '2025, Jose Manuel Martinez Fernandez, Alejandro Polo Barranco, Andres Nenis Pinilla, Gabriel Gomez Rodriguez'
