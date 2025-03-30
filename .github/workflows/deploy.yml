@@ -16,8 +16,9 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          django-admin --version
+          pip install sphinx
+          pip install sphinx-autodoc-typehints
+          pip install django
 
       - uses: ammaraskar/sphinx-action@master
         with:
