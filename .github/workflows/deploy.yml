@@ -18,6 +18,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install sphinx
           pip install -r requirements.txt
+          pip install django
 
       - uses: ammaraskar/sphinx-action@master
         with:
