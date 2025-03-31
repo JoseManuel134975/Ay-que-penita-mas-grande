@@ -14,16 +14,17 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.13"
           cache: 'pip'
 
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - uses: ammaraskar/sphinx-action@master
-        with:
-          docs-folder: "tests_app"
-          build-command: make html
+      # - uses: ammaraskar/sphinx-action@master
+        # with:
+      - name: Generating documentation
+        run: make html
+        working-directory: "tests_app"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
