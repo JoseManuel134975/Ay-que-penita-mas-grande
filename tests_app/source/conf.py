@@ -6,14 +6,14 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-# import os
-# import sys
+import os
+import sys
 
-# sys.path.insert(0, os.path.abspath('../..'))
-# os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'RefugioDigital.settings')
+sys.path.insert(0, os.path.abspath('../..'))
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'RefugioDigital.settings')
 
-# import django
-# django.setup()
+import django
+django.setup()
 
 project = 'RefugioDigital'
 copyright = '2025, JMF, APB, ANP, GGR'
